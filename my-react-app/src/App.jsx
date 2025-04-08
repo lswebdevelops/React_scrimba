@@ -1,13 +1,20 @@
 import Header from "./components/Header";
-import Post from "./components/Post.jsx";
+import Entry from "./components/Entry";
+import data from "./data/data_travel.js";
 
-const App = () => {
+export default function App() {
+  const entryElements = data.map((entry) => {
+    return <Entry
+              key={entry.id}
+            
+              {...entry} 
+            />;
+  });
+
   return (
-    <div>
+    <>
       <Header />
-      <Post />
-    </div>
+      <main className="container">{entryElements}</main>
+    </>
   );
-};
-
-export default App;
+}
