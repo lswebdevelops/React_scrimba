@@ -1,20 +1,11 @@
 import Header from "./components/Header";
-import Entry from "./components/Entry";
-import data from "./data/data_travel.js";
-
+import Main from "./components/Main";
+import StateLearning from "./components/StateLearning";
 export default function App() {
-  const entryElements = data.map((entry) => {
-    return <Entry
-              key={entry.id}
-            
-              {...entry} 
-            />;
-  });
-
   return (
     <>
       <Header />
-      <main className="container">{entryElements}</main>
+    <StateLearning />
     </>
   );
 }
