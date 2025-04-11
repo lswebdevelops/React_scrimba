@@ -1,24 +1,30 @@
 import React from "react";
 
-const Main = () => {
-  const ingredients = ["Chicken", "Oregano", "Tomatoes"];
- 
-  
+export default function Main() {
+  const [ingredients, setIngredients] = React.useState(["test", "test2"]);
+
+  const ingredientsListItems = ingredients.map((ingredient) => (
+    <li key={ingredient}>{ingredient}</li>
+  ));
+
+  function addIngredient(formData) {
+    const newIngredient = formData.get("ingredient");
+    setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
+  }
+
   return (
     <main>
-      <form  className="add-ingredient-form">
+      <form action={addIngredient} className="add-ingredient-form">
         <input
-          id="input"
-          name="ingredient"
           type="text"
           placeholder="e.g. oregano"
           aria-label="Add ingredient"
+          name="ingredient"
         />
-        <button>Add ingredient</button>
+      
+               <button>Add ingredient</button>
       </form>
-      <ul>test</ul>
+      <ul>{ingredientsListItems}</ul>
     </main>
   );
-};
-
-export default Main;
+}

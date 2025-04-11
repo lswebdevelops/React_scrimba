@@ -1,11 +1,17 @@
-import Header from "./components/Header";
-import Main from "./components/Main";
-import StateLearning from "./components/StateLearning";
+import Anything from "./components/Anything";
+// import dataJokes from './data/jokesData.js'
+// import Jokes from "./components/Jokes";
+
 export default function App() {
+
+ 
+
   return (
-    <>
-      <Header />
-    <StateLearning />
-    </>
+ 
+     
+        <main>
+          <Anything />
+        </main>
+    
   );
 }
