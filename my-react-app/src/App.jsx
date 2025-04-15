@@ -1,47 +1,23 @@
 import React from "react";
-import avatar from "/images/user.png";
-import Star from "./components/Star";
+import padsData from "./data/pads";
+import Pad from "./components/Pad";
 
-export default function App() {
-  
-  const [contact, setContact] = React.useState({
-    firstName: "John",
-    lastName: "Doe",
-    phone: "+1 (212) 555-1212",
-    email: "itsmyrealname@example.com",
-    isFavorite: false,
-  });
+export default function App(props) {
+  const [pads, setPads] = React.useState(padsData);
 
-  function toggleFavorite() {
-    setContact((prevContact) => ({
-      ...prevContact,
-      isFavorite: !prevContact.isFavorite,
-    }));
-  }
+  const styles = {
+    backgroundColor: props.darkmode ? "#222222" : "#cccccc",
+  };
 
-  
-  
+  const buttonElements = pads.map((pad) => (
+    <Pad 
+    darkmode={props.darkmode}
+    key={pad.id} on={pad.on} color={pad.color} />
+  ));
+
   return (
-    <main>
-      <article className="card">
-        <img
-          src={avatar}
-          className="avatar"
-          alt="User profile picture of John Doe"
-        />
-        <div className="info">
-        <Star
-          handleButton={toggleFavorite}
-          isFilled={contact.isFavorite}
-        />
-
-          <h2 className="name">
-            {contact.firstName} {contact.lastName}
-          </h2>
-          <p className="contact">{contact.phone}</p>
-          <p className="contact">{contact.email}</p>
-        </div>
-      </article>
+    <main style={styles}>
+      <div className="pad-container">{buttonElements}</div>
     </main>
   );
 }

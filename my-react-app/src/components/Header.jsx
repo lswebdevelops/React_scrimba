@@ -1,15 +1,11 @@
 import React from "react";
-import logo from '/images/logo_chef.png'
+import avatar from "/images/user.png";
 
-function Header() {
-  
+export default function Header(props) {
   return (
-
-    <header className="header-1">
-      <img  src={logo} alt="logo" className="image-logo" />
-      <h1 className="h1-header">Chef Claude</h1>
+    <header>
+      <img src={avatar} />
+      <p>{props.nameOfUser}</p>
     </header>
-  )
+  );
 }
-
-export default Header;
