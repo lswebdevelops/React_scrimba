@@ -1,12 +1,12 @@
-import React from "react";
-import Header from "./components/Header";
-import MainClaude from "./components/MainClaude";
+import Header from "./components/Header"
+import Main from "./components/Main"
 
 export default function App() {
-  return (
-    <>
-      <Header />
-      <MainClaude />
-    </>
-  )
+    
+    return (
+        <>
+            <Header />
+            <Main />
+        </>
+    )
 }
