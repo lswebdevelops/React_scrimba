@@ -1,12 +1,12 @@
-import Header from "./components/Header"
-import Main from "./components/Main"
+import ClaudeHeader from "./components/ClaudeHeader"
+import MainClaude from "./components/MainClaude"
 
 export default function App() {
     
     return (
         <>
-            <Header />
-            <Main />
+            <ClaudeHeader />
+            <MainClaude />
         </>
     )
 }

@@ -5,20 +5,23 @@ function IngredientsList(props) {
         <li key={ingredient}>{ingredient}</li>
     ))
 
-
   return (
     <section>
-      <h2>Ingredients on hand:</h2>
+      <h2>Ingredientes disponíveis:</h2>
       <ul className="ingredients-list" aria-live="polite">
         {ingredientsListItems}
       </ul>
       {props.ingredients.length > 3 && (
         <div className="get-recipe-container">
-          <div>
-            <h3>Ready for a recipe?</h3>
-            <p>Generate a recipe from your list of ingredients.</p>
+          <div
+               ref={props.ref}
+               >
+            <h3             
+            >Pronto para uma receita?</h3>
+            <p>Gere uma receita com sua lista de ingredientes.</p>
           </div>
-          <button onClick={props.getRecipeFromAi}>Get a recipe</button>
+          <button           
+          onClick={props.getRecipeFromAi}>Gerar receita</button>
         </div>
       )}
     </section>
